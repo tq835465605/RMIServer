@@ -9,7 +9,7 @@ RMI(Remote Method Invocation)服务端，采用lipermi-0.4包
 即完成服务端的远程方法，供客户端调用。示例代码如下
 
 
-       CallHandler callHandler = new CallHandler();
+    CallHandler callHandler = new CallHandler();
 		Compute remoteObject = new ComputeImp();
 		callHandler.registerGlobal(Compute.class, remoteObject);
 
