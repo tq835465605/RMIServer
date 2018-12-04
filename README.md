@@ -1,4 +1,7 @@
+# RMI
+
 RMI(Remote Method Invocation)服务端，采用lipermi-0.4包
+
 定义公共接口Compute，也可以将接口定义为通用客户与服务端都引用即可。
 
 1.这里定义了一个Compute接口，并实现他ComputeImpl。
@@ -15,6 +18,7 @@ RMI(Remote Method Invocation)服务端，采用lipermi-0.4包
 
 即完成服务端的远程方法，供客户端调用。示例代码如下
 
+```java
     CallHandler callHandler = new CallHandler();
     Compute remoteObject = new ComputeImp();
     callHandler.registerGlobal(Compute.class, remoteObject);
@@ -23,3 +27,4 @@ RMI(Remote Method Invocation)服务端，采用lipermi-0.4包
     int thePortIWantToBind = 6666;
     server.bind(thePortIWantToBind, callHandler);
     System.out.println("serve bind success");
+```
